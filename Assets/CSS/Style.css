@@ -1,0 +1,80 @@
+:root{
+    --back: #F0EDEE;
+    --main: #12308A;
+    --accent: #5198DB;
+}
+
+body{
+    margin-top: 200px;
+    background-color: var(--back);
+    display: flex;
+}
+
+header{
+    color: var(--back);
+    text-align: center;
+    background-image: linear-gradient(90deg, var(--main), var(--accent));
+    height: 150px;
+    width: 100%;
+    top: 0px;
+    font-size: 70px;
+    filter: drop-shadow(0px 0px 10px #000000a6);
+    position: absolute;
+}
+
+header h1{
+    padding-top: 40px;
+}
+
+.sElm{
+    width: 400px;
+    text-align: center;
+    border-right: 5px solid var(--main);
+    margin-right: 40px;
+}
+
+.sElm button{
+    color: var(--back);
+    margin-top: 15px;
+    width: 80%;
+    height: 50px;
+    font-size: 20px;
+    background-color: var(--accent);
+    transition: 0.5s;
+    border-radius: 15px;
+}
+
+.sElm button:hover{
+    background-color: var(--main);
+    transition: 0.25s;
+}
+
+.sElm button:active{
+    background-color: var(--back);
+    color: var(--main);
+    transition: 0s;
+}
+
+.fakeHr{
+    content: " ";
+    display: block;
+    border-bottom: 3.5px solid var(--accent);
+    margin: 5%;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    width: 90%;
+}
+
+.sBar h1{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.sBar input{
+    width: 80%;
+    padding: 2%;
+}
+
+.sList p{
+    font-size: 20px;
+}
