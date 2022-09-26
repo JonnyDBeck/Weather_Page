@@ -78,3 +78,88 @@ header h1{
 .sList p{
     font-size: 20px;
 }
+
+.nsElm{
+    width: 65%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.todayBox{
+    width: 100%;
+    border: 5px var(--main) solid;
+    border-radius: 15px;
+    background-color: var(--back);
+    filter: drop-shadow(3px 3px 10px #000000a6);
+    display: flex;
+    padding: 15px;
+}
+
+.todayBox aside{
+    width: 50%;
+    border-right: 5px solid var(--main);
+}
+
+.todayBox h1{
+    font-size: 50px;
+    margin-bottom: 5px;
+}
+
+.todayBox h2{
+    font-size: 45px;
+    margin-bottom: 5px;
+}
+
+.todayBox h3{
+    font-size: 35px;
+    margin-bottom: 5px;
+}
+
+.todayBox li{
+    height: 33.33%;
+}
+
+.todayBox li{
+    font-size: 35px;
+    margin-bottom: 1%;
+    margin-left: 15px;
+}
+
+.nsElm p{
+    font-size: 35px;
+    margin-top: 15px;
+}
+
+.wCard{
+    background-color: var(--accent);
+    border: 5px solid var(--main);
+    border-radius: 15px;
+    color: var(--back);
+    text-align: center;
+    padding: 15px;
+    margin: 5px;
+    flex-basis: 225px;
+}
+
+.wCard h1{
+    font-size: 35px;
+}
+
+.wCard h2{
+    font-size: 30px;
+}
+
+.wCard h3{
+    font-size: 25px;
+}
+
+.wCard li{
+    text-align: left;
+    font-size: 20px;
+}
+
+.wallet{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
