@@ -13,6 +13,7 @@ var wallet = $('#wallet');
 var wAPIKey = "1b5a9a0bdf858ae608b75dbdd896fa41";
 
 //Local Storage Check
+localStorage.clear();
 storageCheck();
 
 
@@ -215,7 +216,6 @@ function storageCheck(){
 
     //makes a button for each index
     for(i = 0; i < 8; i++){
-        console.log(i)
         if (history[i] != ""){
             var locArray = history[i].split(", ");
             makeBtn(locArray[0], locArray[1], false);
