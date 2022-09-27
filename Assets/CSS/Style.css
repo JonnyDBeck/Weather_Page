@@ -182,3 +182,12 @@ header h1{
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
+.hidden{
+    display: none;
+}
+
+.error{
+    color: red;
+    margin-top: 15px;
+}

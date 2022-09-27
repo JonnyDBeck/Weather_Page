@@ -1,6 +1,6 @@
 var sBtn = $('#sBtn');
 var sbar = $('#cityInput');
-
+var errMsg = $('#errMsg');
 var btnList = $('#btnList');
 
 var bigWeather = $('#bigWeather');
@@ -13,13 +13,21 @@ var wAPIKey = "1b5a9a0bdf858ae608b75dbdd896fa41";
 sBtn.click(function(e){
     e.preventDefault();
     var city = sbar.val().trim().replace(/ /g,"_");
+    city = city.toString().toLowerCase();
     var latLon = [];
 
     var gQueryURL = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + ",US&limit=5&appid=" + wAPIKey
     fetch(gQueryURL)
     .then((response) => response.json())
     .then(function (data){
-        //console.log(data)
+
+        if (typeof(data[0]) == "undefined"){
+            errMsg.removeClass("hidden");  
+            return;
+        } else{
+            errMsg.addClass("hidden");
+        }
+
         latLon = [data[0].lat, data[0].lon, data[0].state]
 
         makeBtn(city, latLon[2], true)
@@ -29,6 +37,8 @@ sBtn.click(function(e){
 
 
 function updatePage(locale, city){
+    bigWeather.removeClass("hidden");
+
     var allH2 = bigWeather.find("h2");
     for(i = 0; i < 6; i++){
         allH2.first().text(city.replace("_"," ") + ', ' + locale[2]);
@@ -41,7 +51,7 @@ function updatePage(locale, city){
         allH3 = allH3.slice(1);
     }
 
-    var gQueryURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + locale[0] + "&lon=" + locale[1] + "&appid=" + wAPIKey + "&units=imperial";ay
+    var gQueryURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + locale[0] + "&lon=" + locale[1] + "&appid=" + wAPIKey + "&units=imperial";
     fetch(gQueryURL)
     .then((response) => response.json())
     .then(function (data){
