@@ -9,6 +9,7 @@ var wallet = $('#wallet');
 
 var wAPIKey = "1b5a9a0bdf858ae608b75dbdd896fa41";
 
+storageCheck();
 
 sBtn.click(function(e){
     e.preventDefault();
@@ -99,8 +100,25 @@ function makeBtn(city, state, data){
 
     var newBtn = $('<button>')
     newBtn.text(fullName);
-    btnList.prepend('<br>');
-    btnList.prepend(newBtn)
+    if(data){
+        btnList.prepend('<br>');
+        btnList.prepend(newBtn)
+    }else{
+        btnList.append(newBtn)
+        btnList.append('<br>');
+        }
+
+
+    allBtn = btnList.find("button");
+    if(data){
+        var history = JSON.parse(localStorage.getItem("History"));
+        for(i = 0; i < allBtn.length; i++){
+            history[i] = allBtn[i].textContent;
+        }
+        console.log(allBtn[0].textContent)
+        localStorage.setItem("History", JSON.stringify(history))        
+    }
+
 
     newBtn.on('click', clickevent => {
 
@@ -161,4 +179,22 @@ function toEmoji(weather){
     }
 
     return emoji;
+}
+
+function storageCheck(){
+    if(localStorage.getItem("History") == null){
+        var emptyArray = ["","","","","","","",""]
+
+        localStorage.setItem("History", JSON.stringify(emptyArray))
+    }
+
+    var history = JSON.parse(localStorage.getItem("History"));
+
+    for(i = 0; i < 8; i++){
+        console.log(i)
+        if (history[i] != ""){
+            var locArray = history[i].split(", ");
+            makeBtn(locArray[0], locArray[1], false);
+        }
+    }
 }
