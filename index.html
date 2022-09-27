@@ -18,18 +18,19 @@
         <aside class="sElm">
             <div class="sBar">
                 <h1>Search For City:</h1>
-                <input type="text">
+                <input type="text" id="cityInput">
                 <br>
-                <button>Search</button>
+                <button id="sBtn">Search</button>
             </div>
             <div class="fakeHr"></div>
             <div class="sList">
                 <p>Recently Searched:</p>
+                <div id="btnList"></div>
             </div>
         </aside>
 
-        <section class="nsElm">
-            <article class="todayBox">
+        <section class="nsElm" id="bigWeather">
+            <article class="todayBox" id="todayBox">
                 <aside>
                     <h1>☀️</h1>
                     <h2>Atlanta, Georgia</h2>
@@ -42,7 +43,7 @@
                 </ul>
             </article>
             <p>5-Day Forcast:</p>
-            <section class="wallet">
+            <section class="wallet" id="wallet">
                 <div class="wCard">
                     <h1>☀️</h1>
                     <h2>Atlanta, Georgia</h2>
@@ -74,7 +75,7 @@
                     </ul>
                 </div>
                 <div class="wCard">
-                    <h1>☀️</h1>
+                    <h1>🌦</h1>
                     <h2>Atlanta, Georgia</h2>
                     <h3>5-26-2003</h3>
                     <ul>
@@ -84,7 +85,7 @@
                     </ul>
                 </div>
                 <div class="wCard">
-                    <h1>☀️</h1>
+                    <h1>🌤</h1>
                     <h2>Atlanta, Georgia</h2>
                     <h3>5-27-2003</h3>
                     <ul>
@@ -95,5 +96,9 @@
                 </div>
             </section>
         </section>
+
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>  
+        <script type="text/javascript" src="./Assets/Java/Script.js"></script>
     </body>
 </html>
